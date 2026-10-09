@@ -1,0 +1,282 @@
+/* Shared glass surfaces retain the portfolio's blue and white palette. */
+:root {
+  --line: rgba(28, 68, 130, 0.2);
+  --glass-edge: rgba(255, 255, 255, 0.76);
+  --glass-light: rgba(248, 252, 255, 0.74);
+  --glass-shadow: 0 16px 46px rgba(28, 63, 123, 0.12);
+}
+body {
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 8% 20%, #c7eaff 0%, transparent 46%),
+    radial-gradient(ellipse at 96% 75%, #d8d9ff 0%, transparent 45%), #edf4ff;
+  background-attachment: fixed;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    580px circle at var(--ambient-x, 60vw) var(--ambient-y, 30vh),
+    rgba(93, 197, 255, 0.26),
+    transparent 75%
+  );
+}
+.site-header,
+.site-footer,
+.project-dialog {
+  background: var(--glass-light);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  backdrop-filter: blur(22px) saturate(150%);
+  box-shadow:
+    inset 0 1px 0 var(--glass-edge),
+    var(--glass-shadow);
+}
+.site-header.is-scrolled {
+  border-color: var(--glass-edge);
+  box-shadow:
+    inset 0 1px 0 #fff,
+    var(--glass-shadow);
+}
+.menu-toggle {
+  background: rgba(255, 255, 255, 0.16);
+}
+.menu-toggle:hover,
+.header-whatsapp:hover,
+.header-whatsapp:focus-visible {
+  background: rgba(153, 212, 255, 0.26);
+  color: var(--blue);
+}
+.hero {
+  background: transparent;
+}
+.hero-stage {
+  outline: 1px solid rgba(255, 255, 255, 0.5);
+  outline-offset: -1px;
+}
+.about {
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.77),
+    rgba(244, 250, 255, 0.5)
+  );
+  box-shadow: inset 0 1px 0 var(--glass-edge);
+}
+.about-copy {
+  background: rgba(255, 255, 255, 0.2);
+}
+.work-section {
+  background: rgba(237, 243, 255, 0.54);
+}
+.project-card {
+  border: 1px solid var(--glass-edge);
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 10px 26px rgba(16, 44, 105, 0.1);
+}
+.contact {
+  background:
+    radial-gradient(
+      ellipse at 80% 0%,
+      rgba(79, 160, 229, 0.22),
+      transparent 70%
+    ),
+    linear-gradient(125deg, rgba(16, 44, 105, 0.97), rgba(22, 58, 114, 0.91));
+  box-shadow: inset 0 1px 0 var(--glass-edge);
+}
+.contact a {
+  background: rgba(255, 255, 255, 0.035);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+.contact a:hover {
+  background: rgba(204, 231, 255, 0.13);
+  color: var(--white);
+}
+.site-menu {
+  background: linear-gradient(
+    135deg,
+    rgba(27, 66, 125, 0.91),
+    rgba(9, 29, 76, 0.94)
+  );
+  -webkit-backdrop-filter: blur(28px) saturate(150%);
+  backdrop-filter: blur(28px) saturate(150%);
+  border-left: 1px solid rgba(228, 243, 255, 0.5);
+}
+.site-menu::backdrop,
+.project-dialog::backdrop {
+  background: rgba(4, 19, 56, 0.5);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.site-menu nav a:hover,
+.site-menu nav a:focus-visible,
+.menu-email:hover {
+  background: rgba(204, 230, 255, 0.15);
+  color: var(--white);
+}
+.project-dialog {
+  border-radius: 0;
+}
+.dialog-heading {
+  background: rgba(16, 44, 105, 0.88);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+.dialog-heading button,
+.menu-top button,
+.dialog-links a,
+.carousel-arrow {
+  border-radius: 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.dialog-links a,
+.dialog-navigation button {
+  background: rgba(255, 255, 255, 0.35);
+}
+.dialog-links a:hover,
+.dialog-navigation button:hover {
+  background: var(--blue);
+}
+.carousel-arrow {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+.site-credit {
+  margin: 0;
+  color: #4b6085;
+  font-size: 12px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+.site-credit a {
+  display: inline-block;
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(16, 44, 105, 0.3);
+  text-underline-offset: 4px;
+}
+.site-credit a:hover {
+  text-decoration-color: currentColor;
+  transform: translateY(-1px);
+}
+/* Pointer light is scoped to the hovered surface. */
+.header-whatsapp,
+.menu-toggle,
+.contact a {
+  position: relative;
+  overflow: hidden;
+}
+:is(.project-card, .header-whatsapp, .menu-toggle, .contact a)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    260px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+    rgba(117, 221, 255, 0.22),
+    transparent 75%
+  );
+  transition: opacity 0.4s;
+}
+@media (hover: hover) and (pointer: fine) {
+  :is(.project-card, .header-whatsapp, .menu-toggle, .contact a):hover::after {
+    opacity: 1;
+  }
+}
+/* A manual popover keeps the decorative cursor above modal dialogs. */
+.cursor-layer {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: transparent;
+  pointer-events: none;
+  opacity: 0;
+}
+.cursor-layer::backdrop {
+  background: transparent;
+  pointer-events: none;
+}
+.cursor-layer.is-visible {
+  opacity: 1;
+}
+.cursor-ring,
+.cursor-trail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform;
+}
+.cursor-ring {
+  width: 16px;
+  height: 16px;
+  margin: -8px;
+  border: 1.5px solid #fff;
+  background: rgba(61, 148, 220, 0.24);
+  box-shadow:
+    0 0 0 1px rgba(16, 44, 105, 0.85),
+    0 0 16px rgba(55, 171, 245, 0.4);
+  transition:
+    width 0.2s,
+    height 0.2s,
+    margin 0.2s,
+    background 0.2s;
+}
+.cursor-layer.is-interactive .cursor-ring {
+  width: 44px;
+  height: 44px;
+  margin: -22px;
+  background: rgba(91, 196, 255, 0.12);
+}
+.cursor-layer.is-pressed .cursor-ring {
+  width: 24px;
+  height: 24px;
+  margin: -12px;
+}
+.cursor-trail {
+  width: 7px;
+  height: 7px;
+  margin: -3.5px;
+  background: #469cdc;
+  box-shadow: 0 0 8px rgba(126, 222, 255, 0.65);
+}
+html.has-custom-cursor,
+html.has-custom-cursor * {
+  cursor: none !important;
+}
+html.has-custom-cursor
+  :is(iframe, video, input, textarea, [contenteditable="true"]) {
+  cursor: auto !important;
+}
+@media (max-width: 600px) {
+  .project-dialog {
+    border-radius: 0;
+  }
+  .site-footer {
+    flex-direction: column;
+    align-items: start;
+    gap: 18px;
+  }
+  .site-credit {
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cursor-layer {
+    display: none !important;
+  }
+}

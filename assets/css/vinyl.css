@@ -1,0 +1,314 @@
+.vinyl-section {
+  position: relative;
+  padding: clamp(36px, 5vw, 80px) 0 38px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(ellipse at 15% 0%, #e1f4ff, transparent 65%),
+    linear-gradient(135deg, #f6faff, #e5ecfc);
+  box-shadow: 0 -20px 50px rgba(16, 44, 105, 0.08);
+}
+.album-heading {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 clamp(22px, 5vw, 90px);
+}
+.album-heading h2 {
+  max-width: 640px;
+  margin: 0 auto;
+  color: #626970;
+  text-align: center;
+  font-size: clamp(16px, 1.6vw, 21px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.4;
+}
+.album-heading h2 span {
+  color: inherit;
+}
+.album-carousel {
+  --album-size: clamp(160px, 26vw, 320px);
+  --side-offset: calc(var(--album-size) * 1.15);
+  max-width: 1300px;
+  margin: 24px auto 0;
+}
+.album-stage {
+  position: relative;
+  height: calc(var(--album-size) * 1.62);
+  perspective: 1100px;
+  touch-action: pan-y;
+}
+.album-stage::after {
+  content: "";
+  position: absolute;
+  inset: auto 10% 3%;
+  height: 30%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(43, 85, 149, 0.1),
+    transparent 65%
+  );
+  pointer-events: none;
+}
+.album {
+  position: absolute;
+  top: calc(var(--album-size) * 0.15);
+  left: calc(50% - var(--album-size) / 2);
+  display: block;
+  width: var(--album-size);
+  height: var(--album-size);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  isolation: isolate;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.8s ease;
+}
+.album-artwork {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-box-reflect: below 12px
+    linear-gradient(transparent 68%, rgba(16, 44, 105, 0.18));
+}
+.album.is-center {
+  z-index: 3;
+  opacity: 1;
+  transform: translateX(-20%);
+}
+.album.is-left {
+  z-index: 2;
+  opacity: 0.55;
+  transform: translateX(calc(-1 * var(--side-offset))) rotateY(42deg) scale(0.8);
+}
+.album.is-right {
+  z-index: 2;
+  opacity: 0.55;
+  transform: translateX(var(--side-offset)) rotateY(-42deg) scale(0.8);
+}
+.album.is-hidden {
+  z-index: 0;
+  opacity: 0;
+  transform: translateZ(-200px) scale(0.5);
+  pointer-events: none;
+}
+.album.is-center .cover {
+  transform: translateX(-3%) rotate(-2deg);
+}
+.album.is-center .vinyl {
+  transform: translateX(50%) rotate(360deg);
+}
+.album-meta {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 20px;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 22px 12px;
+}
+.album-caption {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: -0.04em;
+}
+.album-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 480px;
+  margin: auto;
+}
+.album-controls button {
+  touch-action: manipulation;
+  min-width: 32px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: var(--blue);
+  background: transparent;
+}
+.album-controls button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+.album-controls :is(.album-prev, .album-next) {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(16, 44, 105, 0.25);
+  background: rgba(255, 255, 255, 0.45);
+  transition:
+    color 0.25s,
+    background 0.25s,
+    border-color 0.25s;
+}
+.album-controls :is(.album-prev, .album-next):is(:hover, :focus-visible) {
+  color: #fff;
+  background: var(--blue);
+  border-color: var(--blue);
+}
+.album-controls svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  transition: transform 0.25s ease;
+}
+.album-prev:is(:hover, :focus-visible) svg {
+  transform: translateX(-3px);
+}
+.album-next:is(:hover, :focus-visible) svg {
+  transform: translateX(3px);
+}
+.album-navigation {
+  display: flex;
+  gap: 2px;
+}
+.album-dot {
+  display: grid;
+  place-items: center;
+}
+.album-dot span {
+  display: block;
+  width: 16px;
+  height: 2px;
+  background: currentColor;
+  opacity: 0.22;
+  transition:
+    opacity 0.35s,
+    transform 0.35s;
+}
+.album-dot[aria-current="true"] span {
+  opacity: 1;
+  transform: scaleY(2);
+}
+@media (max-width: 600px) {
+  .album-carousel {
+    --side-offset: calc(var(--album-size) * 1.12);
+  }
+  .album-stage {
+    height: calc(var(--album-size) * 1.72);
+  }
+  .album-controls {
+    gap: 8px;
+  }
+  .album-controls button {
+    min-width: 26px;
+  }
+  .album-controls :is(.album-prev, .album-next) {
+    width: 44px;
+    height: 44px;
+  }
+  .album-navigation {
+    gap: 0;
+  }
+}
+.album .cover {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(5, 22, 52, 0.3);
+  transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.album .cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.album .cover::before,
+.album .cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.album .cover::before {
+  height: 10%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.4) 1%,
+    transparent 50%
+  );
+}
+.album .cover::after {
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 4%),
+    linear-gradient(
+      225deg,
+      rgba(162, 162, 162, 0.1) 0%,
+      rgba(162, 162, 162, 0.2) 4%,
+      rgba(255, 255, 255, 0.6) 7%,
+      transparent 8%
+    ),
+    linear-gradient(
+      45deg,
+      rgba(14, 14, 14, 0.7),
+      rgba(0, 0, 0, 0.2) 4%,
+      rgba(255, 255, 255, 0.3) 7%,
+      transparent 8%
+    );
+}
+.vinyl {
+  position: absolute;
+  top: 3%;
+  right: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 94%;
+  height: 94%;
+  border-radius: 50%;
+  background:
+    conic-gradient(
+      from 50deg,
+      transparent 46%,
+      rgba(255, 255, 255, 0.15) 51%,
+      transparent 56%
+    ),
+    conic-gradient(
+      from 225deg,
+      transparent 46%,
+      rgba(255, 255, 255, 0.15) 51%,
+      transparent 56%
+    ),
+    repeating-radial-gradient(
+      circle,
+      rgba(120, 120, 120, 0.18) 0,
+      rgba(192, 192, 192, 0.02) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    #08090b;
+  box-shadow: 0 5px 16px rgba(5, 22, 52, 0.32);
+  transform: translateX(0) rotate(270deg);
+  transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.vinyl-cover {
+  width: 36%;
+  height: 36%;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 0 5px #08090b;
+}
+.vinyl::after {
+  content: "";
+  position: absolute;
+  width: 3%;
+  height: 3%;
+  border-radius: 50%;
+  background: #e3edfa;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.6);
+}
