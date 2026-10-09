@@ -1,0 +1,23 @@
+{
+  "name": "portfolio-galan-gfx",
+  "version": "1.0.0",
+  "description": "Portfolio visual GFX en HTML, CSS y JavaScript.",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "prepare:assets": "node scripts/assets/prepare-assets.mjs",
+    "check": "node scripts/checks/check-site.mjs && node scripts/checks/check-effects.mjs && node scripts/checks/check-albums.mjs && node scripts/checks/check-hero.mjs",
+    "clean:checks": "node scripts/clean-checks.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@napi-rs/canvas": "^1.0.10",
+    "ffmpeg-static": "^5.3.0",
+    "pdfjs-dist": "^6.4.299",
+    "playwright-core": "^1.64.0",
+    "prettier": "^3.9.9",
+    "sharp": "^0.35.5"
+  }
+}
