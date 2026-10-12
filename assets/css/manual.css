@@ -1,0 +1,118 @@
+.project-dialog.is-document {
+  height: calc(100dvh - 64px);
+  overflow: hidden;
+}
+.project-dialog.is-document .dialog-layout {
+  height: 100%;
+  min-height: 0;
+}
+.project-dialog.is-document .dialog-heading,
+.project-dialog.is-document .dialog-bottom {
+  flex-shrink: 0;
+}
+.project-dialog.is-document .dialog-bottom {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 54px;
+}
+.project-dialog.is-document .dialog-links {
+  display: none;
+}
+.dialog-media.is-document {
+  display: block;
+  flex: 1;
+  min-height: 0;
+  max-height: none;
+  overflow: hidden;
+  background: #dce5f2;
+}
+.manual-viewer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.manual-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 12px;
+  padding: 8px 16px;
+  background: rgba(248, 252, 255, 0.9);
+  border-bottom: 1px solid var(--line);
+}
+.manual-toolbar button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--blue);
+  font-size: 15px;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.manual-toolbar button:hover:not(:disabled) {
+  background: var(--blue);
+  color: #fff;
+}
+.manual-toolbar button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.manual-counter {
+  min-width: 60px;
+  text-align: center;
+  font:
+    12px "DM Mono",
+    monospace;
+}
+.manual-stage {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 12px;
+}
+.dialog-media .manual-stage img {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: none;
+  object-fit: contain;
+  margin: auto;
+}
+.dialog-media .manual-stage.is-zoomed img {
+  width: 1800px;
+  height: auto;
+  max-width: none;
+  align-self: flex-start;
+  margin: 0;
+}
+.manual-status {
+  position: absolute;
+  inset: 20px;
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .project-dialog.is-document {
+    height: 100dvh;
+  }
+  .manual-toolbar {
+    gap: 6px;
+    padding: 8px;
+  }
+  .manual-stage {
+    padding: 6px;
+  }
+  .project-dialog.is-document .dialog-navigation {
+    width: 100%;
+  }
+}

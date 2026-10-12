@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#102c69" />
+    <meta
+      name="description"
+      content="Portfolio de GFX, diseñador gráfico freelance en la zona de Valencia. Identidad visual, fotografía y audiovisual."
+    />
+    <title>GFX. — Diseñador gráfico freelance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/vinyl.css" />
+    <link rel="stylesheet" href="assets/css/effects.css" />
+    <link rel="stylesheet" href="assets/css/manual.css" />
+    <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/effects.js" defer></script>
+    <script src="assets/js/vinyl.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="GFX, volver al inicio"
+        ><img
+          src="assets/images/brand/gfx-logo.png"
+          alt=""
+          width="241"
+          height="91"
+      /></a>
+      <a
+        class="header-whatsapp"
+        href="https://wa.me/34697782479"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contactar con GFX por WhatsApp"
+        ><span class="whatsapp-text">WhatsApp</span>
+        <span aria-hidden="true">↗</span></a
+      >
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Abrir menú"
+        aria-haspopup="dialog"
+        aria-controls="site-menu"
+      >
+        <span>Menú</span
+        ><span class="menu-lines" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </header>
+    <dialog class="site-menu" id="site-menu" aria-label="Menú de navegación">
+      <div class="menu-panel">
+        <div class="menu-top">
+          <span class="menu-brand">GFX.</span>
+          <button id="menu-close" type="button" aria-label="Cerrar menú">
+            Cerrar <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="menu-content">
+          <nav aria-label="Navegación principal">
+            <a href="#inicio"
+              ><span class="menu-link-mask"
+                ><span class="menu-link-current">Inicio</span
+                ><span class="menu-link-next" aria-hidden="true"
+                  >Inicio</span
+                ></span
+              ><span class="menu-arrow" aria-hidden="true">↗</span></a
+            >
+            <a href="#sobre-mi"
+              ><span class="menu-link-mask"
+                ><span class="menu-link-current">Sobre mí</span
+                ><span class="menu-link-next" aria-hidden="true"
+                  >Sobre mí</span
+                ></span
+              ><span class="menu-arrow" aria-hidden="true">↗</span></a
+            >
+            <a href="#proyectos"
+              ><span class="menu-link-mask"
+                ><span class="menu-link-current">Proyectos</span
+                ><span class="menu-link-next" aria-hidden="true"
+                  >Proyectos</span
+                ></span
+              ><span class="menu-arrow" aria-hidden="true">↗</span></a
+            >
+            <a href="#contacto"
+              ><span class="menu-link-mask"
+                ><span class="menu-link-current">Contacto</span
+                ><span class="menu-link-next" aria-hidden="true"
+                  >Contacto</span
+                ></span
+              ><span class="menu-arrow" aria-hidden="true">↗</span></a
+            >
+          </nav>
+        </div>
+        <a
+          class="menu-email"
+          href="mailto:galanalcarazalejandro@gmail.com?subject=Proyecto%20para%20GFX"
+          >galanalcarazalejandro@gmail.com <span aria-hidden="true">↗</span></a
+        >
+      </div>
+    </dialog>
+    <main id="contenido">
+      <section
+        class="hero"
+        id="inicio"
+        aria-label="GFX, portfolio de diseño gráfico"
+      >
+        <div
+          class="hero-stage"
+          id="hero-stage"
+          role="img"
+          aria-label="Composición GFX en azul con un diseñador delante de grandes letras blancas"
+        >
+          <div class="hero-background hero-layer" aria-hidden="true">
+            <img
+              src="assets/images/hero/hero-background.png"
+              alt=""
+              fetchpriority="high"
+            />
+          </div>
+          <div class="hero-type hero-layer" aria-hidden="true">
+            <picture>
+              <source
+                media="(max-width: 600px)"
+                srcset="assets/images/hero/hero-gfx-mobile.webp"
+              />
+              <img
+                src="assets/images/hero/hero-gfx.png"
+                alt=""
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+          <div class="hero-person hero-layer" aria-hidden="true">
+            <picture>
+              <source
+                media="(max-width: 600px)"
+                srcset="assets/images/hero/hero-person-mobile.webp"
+              />
+              <img
+                src="assets/images/hero/hero-person.png"
+                alt=""
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+      <section class="vinyl-section" aria-labelledby="album-title">
+        <div class="album-heading">
+          <h2 id="album-title">
+            Especializado en portadas de álbumes<span>.</span>
+          </h2>
+        </div>
+        <div
+          class="album-carousel"
+          role="region"
+          aria-roledescription="carrusel"
+          aria-label="Portadas de álbumes"
+        >
+          <div class="album-stage">
+            <button
+              class="album is-center"
+              type="button"
+              data-cover-url="assets/images/albums/album-carmin.webp"
+              data-title="Carmín"
+              aria-label="Ver portada Carmín"
+              aria-current="true"
+              tabindex="0"
+            >
+              <span class="album-artwork"
+                ><span class="cover"
+                  ><img
+                    src="assets/images/albums/album-carmin.webp"
+                    alt="Portada de Carmín"
+                    width="960"
+                    height="960"
+                    loading="lazy"
+                    decoding="async" /></span
+                ><span class="vinyl" aria-hidden="true"
+                  ><span class="vinyl-cover"></span></span
+              ></span>
+            </button>
+            <button
+              class="album is-right"
+              type="button"
+              data-cover-url="assets/images/albums/album-drakukeo-03.webp"
+              data-title="Drakukeo / 01"
+              aria-label="Ver portada Drakukeo / 01"
+              aria-current="false"
+              tabindex="-1"
+            >
+              <span class="album-artwork"
+                ><span class="cover"
+                  ><img
+                    src="assets/images/albums/album-drakukeo-03.webp"
+                    alt="Portada de Drakukeo / 01"
+                    width="960"
+                    height="960"
+                    loading="lazy"
+                    decoding="async" /></span
+                ><span class="vinyl" aria-hidden="true"
+                  ><span class="vinyl-cover"></span></span
+              ></span>
+            </button>
+            <button
+              class="album is-hidden"
+              type="button"
+              data-cover-url="assets/images/albums/album-drakukeo-04.webp"
+              data-title="Drakukeo / 02"
+              aria-label="Ver portada Drakukeo / 02"
+              aria-current="false"
+              tabindex="-1"
+            >
+              <span class="album-artwork"
+                ><span class="cover"
+                  ><img
+                    src="assets/images/albums/album-drakukeo-04.webp"
+                    alt="Portada de Drakukeo / 02"
+                    width="960"
+                    height="960"
+                    loading="lazy"
+                    decoding="async" /></span
+                ><span class="vinyl" aria-hidden="true"
+                  ><span class="vinyl-cover"></span></span
+              ></span>
+            </button>
+            <button
+              class="album is-hidden"
+              type="button"
+              data-cover-url="assets/images/albums/album-igot.webp"
+              data-title="I Got"
+              aria-label="Ver portada I Got"
+              aria-current="false"
+              tabindex="-1"
+            >
+              <span class="album-artwork"
+                ><span class="cover"
+                  ><img
+                    src="assets/images/albums/album-igot.webp"
+                    alt="Portada de I Got"
+                    width="960"
+                    height="960"
+                    loading="lazy"
+                    decoding="async" /></span
+                ><span class="vinyl" aria-hidden="true"
+                  ><span class="vinyl-cover"></span></span
+              ></span>
+            </button>
+            <button
+              class="album is-hidden"
+              type="button"
+              data-cover-url="assets/images/albums/album-one-million.webp"
+              data-title="One Million"
+              aria-label="Ver portada One Million"
+              aria-current="false"
+              tabindex="-1"
+            >
+              <span class="album-artwork"
+                ><span class="cover"
+                  ><img
+                    src="assets/images/albums/album-one-million.webp"
+                    alt="Portada de One Million"
+                    width="960"
+                    height="960"
+                    loading="lazy"
+                    decoding="async" /></span
+                ><span class="vinyl" aria-hidden="true"
+                  ><span class="vinyl-cover"></span></span
+              ></span>
+            </button>
+            <button
+              class="album is-hidden"
+              type="button"
+              data-cover-url="assets/images/albums/album-one.webp"
+              data-title="One"
+              aria-label="Ver portada One"
+              aria-current="false"
+              tabindex="-1"
+            >
+              <span class="album-artwork"
+                ><span class="cover"
+                  ><img
+                    src="assets/images/albums/album-one.webp"
+                    alt="Portada de One"
+                    width="960"
+                    height="960"
+                    loading="lazy"
+                    decoding="async" /></span
+                ><span class="vinyl" aria-hidden="true"
+                  ><span class="vinyl-cover"></span></span
+              ></span>
+            </button>
+            <button
+              class="album is-hidden"
+              type="button"
+              data-cover-url="assets/images/albums/album-trap-life.webp"
+              data-title="Trap Life"
+              aria-label="Ver portada Trap Life"
+              aria-current="false"
+              tabindex="-1"
+            >
+              <span class="album-artwork"
+                ><span class="cover"
+                  ><img
+                    src="assets/images/albums/album-trap-life.webp"
+                    alt="Portada de Trap Life"
+                    width="960"
+                    height="960"
+                    loading="lazy"
+                    decoding="async" /></span
+                ><span class="vinyl" aria-hidden="true"
+                  ><span class="vinyl-cover"></span></span
+              ></span>
+            </button>
+            <button
+              class="album is-left"
+              type="button"
+              data-cover-url="assets/images/albums/album-ice.webp"
+              data-title="ICE"
+              aria-label="Ver portada ICE"
+              aria-current="false"
+              tabindex="-1"
+            >
+              <span class="album-artwork"
+                ><span class="cover"
+                  ><img
+                    src="assets/images/albums/album-ice.webp"
+                    alt="Portada de ICE"
+                    width="960"
+                    height="960"
+                    loading="lazy"
+                    decoding="async" /></span
+                ><span class="vinyl" aria-hidden="true"
+                  ><span class="vinyl-cover"></span></span
+              ></span>
+            </button>
+          </div>
+          <div class="album-meta">
+            <p class="album-caption" aria-live="off" aria-atomic="true">
+              Carmín
+            </p>
+          </div>
+          <div class="album-controls">
+            <button
+              class="album-prev"
+              type="button"
+              aria-label="Portada anterior"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M20 12H4m7-7-7 7 7 7" />
+              </svg>
+            </button>
+            <div
+              class="album-navigation"
+              role="group"
+              aria-label="Elegir portada"
+            >
+              <button
+                class="album-dot"
+                type="button"
+                aria-label="Ir a Carmín"
+                aria-current="true"
+              >
+                <span></span></button
+              ><button
+                class="album-dot"
+                type="button"
+                aria-label="Ir a Drakukeo / 01"
+                aria-current="false"
+              >
+                <span></span></button
+              ><button
+                class="album-dot"
+                type="button"
+                aria-label="Ir a Drakukeo / 02"
+                aria-current="false"
+              >
+                <span></span></button
+              ><button
+                class="album-dot"
+                type="button"
+                aria-label="Ir a I Got"
+                aria-current="false"
+              >
+                <span></span></button
+              ><button
+                class="album-dot"
+                type="button"
+                aria-label="Ir a One Million"
+                aria-current="false"
+              >
+                <span></span></button
+              ><button
+                class="album-dot"
+                type="button"
+                aria-label="Ir a One"
+                aria-current="false"
+              >
+                <span></span></button
+              ><button
+                class="album-dot"
+                type="button"
+                aria-label="Ir a Trap Life"
+                aria-current="false"
+              >
+                <span></span></button
+              ><button
+                class="album-dot"
+                type="button"
+                aria-label="Ir a ICE"
+                aria-current="false"
+              >
+                <span></span>
+              </button>
+            </div>
+            <button
+              class="album-next"
+              type="button"
+              aria-label="Portada siguiente"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M4 12h16m-7-7 7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section
+        class="about section-wrap"
+        id="sobre-mi"
+        aria-labelledby="about-title"
+      >
+        <h1 id="about-title" class="motion-target bounce-text">Sobre mí.</h1>
+        <div class="about-copy motion-target">
+          <p>
+            Desde pequeño, la creatividad ha sido mi forma de mirar el mundo. En
+            mi familia era el dibujante, y a los 14 años empecé a tener claro
+            que quería convertir esa inquietud en mi futuro.
+          </p>
+          <p>
+            Hoy soy Alejandro Galán Alcaraz, diseñador gráfico. Lo que comenzó
+            como una forma de expresarme se ha convertido en una herramienta con
+            la que dar forma a ideas, construir identidades y encontrar
+            soluciones a través del diseño.
+          </p>
+          <p>
+            Entiendo cada proyecto como una oportunidad para conectar con las
+            personas, comprender lo que necesitan y transformar sus ideas en
+            algo con sentido. Me implico en cada proceso desde la cercanía, la
+            pasión y el compromiso, buscando que el resultado no solo funcione,
+            sino que también transmita algo.
+          </p>
+          <p>
+            Porque para mí, diseñar no consiste únicamente en crear algo
+            visualmente atractivo. Consiste en encontrar la manera de comunicar,
+            conectar y aportar valor.
+          </p>
+        </div>
+      </section>
+      <section class="work-section" id="proyectos" aria-labelledby="work-title">
+        <div class="section-wrap work-heading">
+          <h2 id="work-title" class="motion-target bounce-text">
+            Proyectos<span>.</span>
+          </h2>
+        </div>
+        <section class="project-category" aria-labelledby="identity-title">
+          <div class="project-category-heading motion-target">
+            <h3 id="identity-title">Identidad corporativa</h3>
+          </div>
+          <div class="project-showcase is-single">
+            <button
+              class="project-card motion-target"
+              type="button"
+              data-project="trama"
+              aria-label="Abrir proyecto Trama"
+            >
+              <span class="project-image"
+                ><img
+                  src="assets/images/projects/trama-manual/page-13.webp"
+                  alt=""
+                  loading="lazy"
+              /></span>
+              <span class="project-content">
+                <span class="project-kind">Identidad visual</span>
+                <span class="project-title">TRAMA</span>
+                <span class="project-summary"
+                  >Manual de marca e identidad visual.</span
+                >
+                <span class="project-action"
+                  >Ver proyecto <span aria-hidden="true">↗</span></span
+                >
+              </span>
+            </button>
+          </div>
+        </section>
+        <section class="project-category" aria-labelledby="audiovisual-title">
+          <div class="project-category-heading motion-target">
+            <h3 id="audiovisual-title">Edición audiovisual</h3>
+          </div>
+          <div class="project-showcase">
+            <button
+              class="project-card motion-target"
+              type="button"
+              data-project="carmin"
+              aria-label="Abrir proyecto Carmín"
+            >
+              <span class="project-image"
+                ><img
+                  src="assets/images/projects/portada1.webp"
+                  alt=""
+                  loading="lazy"
+              /></span>
+              <span class="project-content">
+                <span class="project-kind">Audiovisual</span>
+                <span class="project-title">CARMÍN</span>
+                <span class="project-summary"
+                  >Portada y vídeo del proyecto.</span
+                >
+                <span class="project-action"
+                  >Ver proyecto <span aria-hidden="true">↗</span></span
+                >
+              </span>
+            </button>
+            <button
+              class="project-card motion-target"
+              type="button"
+              data-project="ice"
+              aria-label="Abrir proyecto ICE"
+            >
+              <span class="project-image"
+                ><img
+                  src="assets/images/albums/album-ice.webp"
+                  alt=""
+                  loading="lazy"
+              /></span>
+              <span class="project-content">
+                <span class="project-kind">Audiovisual</span>
+                <span class="project-title">ICE</span>
+                <span class="project-summary">Pieza audiovisual.</span>
+                <span class="project-action"
+                  >Ver proyecto <span aria-hidden="true">↗</span></span
+                >
+              </span>
+            </button>
+          </div>
+        </section>
+        <section class="project-category" aria-labelledby="photography-title">
+          <div class="project-category-heading motion-target">
+            <h3 id="photography-title">Fotografía</h3>
+          </div>
+          <div class="project-showcase">
+            <button
+              class="project-card motion-target"
+              type="button"
+              data-project="belleza"
+              aria-label="Abrir proyecto Belleza angustiosa"
+            >
+              <span class="project-image"
+                ><img
+                  src="assets/images/photography/belleza-angustiosa.webp"
+                  alt=""
+                  loading="lazy"
+              /></span>
+              <span class="project-content">
+                <span class="project-kind">Fotografía</span>
+                <span class="project-title">Belleza angustiosa</span>
+                <span class="project-summary"
+                  >Una mariposa blanca sobre una flor.</span
+                >
+                <span class="project-action"
+                  >Ver proyecto <span aria-hidden="true">↗</span></span
+                >
+              </span>
+            </button>
+            <button
+              class="project-card motion-target"
+              type="button"
+              data-project="archivo"
+              aria-label="Abrir archivo fotográfico"
+            >
+              <span class="project-image"
+                ><img
+                  src="assets/images/photography/fotografia-3.webp"
+                  alt=""
+                  loading="lazy"
+              /></span>
+              <span class="project-content">
+                <span class="project-kind">Fotografía</span>
+                <span class="project-title">Archivo fotográfico</span>
+                <span class="project-summary"
+                  >Cuatro fotografías para explorar.</span
+                >
+                <span class="project-action"
+                  >Ver proyecto <span aria-hidden="true">↗</span></span
+                >
+              </span>
+            </button>
+          </div>
+        </section>
+      </section>
+      <section
+        class="contact section-wrap"
+        id="contacto"
+        aria-labelledby="contact-title"
+      >
+        <h2 id="contact-title" class="motion-target bounce-text">
+          ¿Hablamos de<br />tu proyecto?
+        </h2>
+        <div class="contact-actions">
+          <a
+            class="motion-target"
+            href="https://wa.me/34697782479"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Escríbeme por WhatsApp"
+            >WhatsApp <span aria-hidden="true">↗</span></a
+          >
+          <a
+            class="contact-email motion-target"
+            href="mailto:galanalcarazalejandro@gmail.com?subject=Proyecto%20para%20GFX"
+            >galanalcarazalejandro@gmail.com
+            <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <a class="motion-target" href="#inicio" aria-label="GFX, volver al inicio"
+        ><img
+          src="assets/images/brand/gfx-logo.png"
+          alt=""
+          width="241"
+          height="91"
+      /></a>
+      <p class="site-credit">
+        Web desarrollada por
+        <a
+          href="https://rodrygodesign.github.io/rodrygodesign/index.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          >rodrygodesign</a
+        >
+      </p>
+    </footer>
+    <dialog
+      class="project-dialog"
+      id="project-dialog"
+      aria-labelledby="dialog-title"
+    >
+      <div class="dialog-layout">
+        <div class="dialog-heading">
+          <h2 id="dialog-title">Proyecto</h2>
+          <button id="dialog-close" type="button" aria-label="Cerrar proyecto">
+            Cerrar <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="dialog-media" id="dialog-media"></div>
+        <div class="dialog-bottom">
+          <div id="dialog-links" class="dialog-links"></div>
+          <div class="dialog-navigation">
+            <button
+              id="dialog-prev"
+              type="button"
+              aria-label="Proyecto anterior"
+            >
+              ← Anterior
+            </button>
+            <button
+              id="dialog-next"
+              type="button"
+              aria-label="Proyecto siguiente"
+            >
+              Siguiente →
+            </button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>
